@@ -1,0 +1,39 @@
+header {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 36px;
+    padding: 10px;
+}
+
+.board {
+    display: grid;
+    height: 75vh;
+    width: 75vh;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border: 7vh solid rgb(193, 139, 70);
+    background: rgb(255, 221, 0);
+    border-radius: 15%;
+    margin: auto;
+  }
+  
+ .column {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 75vh;
+    width: 1fr;
+
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+ }
+
+ .slot {
+    display: flex;
+    height: 8vh;
+    width: 8vh;
+    border: 2px solid orange;
+    border-collapse: separate; 
+    border-radius: 50%;
+ }
+
