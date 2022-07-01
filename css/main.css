@@ -1,6 +1,11 @@
+* {
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   box-sizing: border-box;
+   
+ }
+
 header {
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 36px;
     padding: 10px;
 }
@@ -20,7 +25,7 @@ header {
  .column {
     display: flex;
     flex-direction: column-reverse;
-    height: 75vh;
+    height: 61vh;
     width: 1fr;
 
     text-align: center;
@@ -30,10 +35,38 @@ header {
 
  .slot {
     display: flex;
-    height: 8vh;
-    width: 8vh;
+    height: 7.5vh;
+    width: 7.5vh;
     border: 2px solid orange;
     border-collapse: separate; 
-    border-radius: 50%;
+    border-radius: 50%; 
  }
 
+ .slot:hover {
+   background-color: orange;
+   color: white;
+ }
+
+ body {
+
+   align-items: center;
+ }
+
+ button {
+   justify-self: center;
+   width: 50vmin;
+   margin: 2vmin;
+   background-color: rgb(231, 210, 183);
+   color: black;
+   border: 1vmin solid black;
+   border-radius: 4vmin;
+   font-size: 3vmin;
+   outline: none;
+ }
+ button:hover {
+   background-color:rgb(255, 221, 0);
+ }
+
+ main {
+   text-align: center;
+ }
