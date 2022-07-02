@@ -11,10 +11,10 @@ function getGameStatus() {
 
 /*----- app's state (variables) -----*/
 
-// let board = getElementById = [];  // board[c][r]
-// let turn; // 1 or -1
-// let gameStatus; // null -> game in play; 1/-1 player win, 'T' -> tie
-// let ignoreClick; // Boolean
+let board;
+let turn; // 1 or -1
+let gameStatus; // null -> game in play; 1/-1 player win, 'T' -> tie
+let ignoreClick; // Boolean
 
 /*----- cached element references -----*/
 
@@ -24,12 +24,12 @@ const replayBtn = document.getElementById('replay');
 
 
 /*----- event listeners -----*/
-document.getElementById('slot').addEventListener('click', handleMove);
-replayBtn.addEventListener('click', init);
+// click function -> iterative while loop w/ a variable to check all sides 
+// of clicked slot. If neighboring slots are null (or not same value as player),
+// loop stops. If any of them are the same as the player, the loop continues
+// with 2 in a row and starts over at the 2nd slot, etc. until the loop
+// stops or until there is 4 in a row, naming a winner.
 
-// hover -> turn semi-transparent
-// click
-// loop
 
 /*----- functions -----*/
 init();
