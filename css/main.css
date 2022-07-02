@@ -39,6 +39,9 @@ header {
     border: 2px solid orange;
     border-collapse: separate; 
     border-radius: 50%; 
+    /* background: url(https://i.imgur.com/Jqp2LoD.png); */
+    /* background: url(https://i.imgur.com/GfVAd6d.png); */
+    background-size: 7.2vh;
  }
 
  .slot:hover {
@@ -53,19 +56,24 @@ header {
 
  button {
    justify-self: center;
-   width: 50vmin;
+   width: 25vmin;
+   height: 7vmin;
    margin: 2vmin;
-   background-color: rgb(231, 210, 183);
+   background: transparent;
    color: black;
-   border: 1vmin solid black;
-   border-radius: 4vmin;
-   font-size: 3vmin;
+   border: none;
+   font-size: 1.5vmin;
    outline: none;
+   background: url(https://i.imgur.com/wTkt4EY.png) no-repeat;
+   background-size: 25vmin;
+   opacity: 75%;
+   
  }
  button:hover {
-   background-color:rgb(255, 221, 0);
+   opacity: 100%
  }
 
  main {
    text-align: center;
+
  }

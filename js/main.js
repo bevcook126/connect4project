@@ -1,8 +1,8 @@
 /*----- constants -----*/
-const COLOR_LOOKUP = {
-    '1': {'red'},
-    '-1': {'black'},
-    null: {'rgb(255, 221, 0)'}
+const BACKGROUND_LOOKUP = {
+    '1': {url('https://i.imgur.com/GfVAd6d.png');},
+    '-1': {url('https://i.imgur.com/Jqp2LoD.png')},
+    null: {'rgb(255, 221, 0)'},
 }
 
 function getGameStatus() {
