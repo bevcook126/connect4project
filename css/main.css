@@ -1,13 +1,11 @@
 * {
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    box-sizing: border-box;
-   
  }
 
 header {
     text-align: center;
     font-size: 36px;
-    padding: 10px;
 }
 
 .board {
@@ -16,10 +14,11 @@ header {
     width: 75vh;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    border: 7vh solid rgb(193, 139, 70);
-    background: rgb(255, 221, 0);
+    border: 7vh solid rgb(179, 125, 55);
+    background: rgba(255, 221, 0, 0.873);
     border-radius: 15%;
     margin: auto;
+    position: relative;
   }
   
  .column {
@@ -34,9 +33,9 @@ header {
 
  .slot {
     display: flex;
-    height: 7.5vh;
-    width: 7.5vh;
-    border: 2px solid orange;
+    height: 8vh;
+    width: 8vh;
+    border: 3px solid orange;
     border-collapse: separate; 
     border-radius: 50%; 
     /* background: url(https://i.imgur.com/Jqp2LoD.png); */
@@ -44,15 +43,6 @@ header {
     background-size: 7.2vh;
  }
 
- .slot:hover {
-   background-color: orange;
-   color: white;
- }
-
- body {
-
-   align-items: center;
- }
 
  button {
    justify-self: center;
@@ -70,10 +60,37 @@ header {
    
  }
  button:hover {
-   opacity: 100%
+   opacity: 100%;
  }
 
  main {
-   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
 
+ #choosers {
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: -1vmin;
+   position: absolute;
+   width: 62vh;
+   align-items: center;
+ }
+
+ #choosers > div {
+   height: 10vmin;
+   width: 9vmin;
+   background-image: url(https://i.imgur.com/xPtMq3O.png);
+   background-size: 9vmin;
+ }
+
+ #choosers > div:hover {
+   transform: scale(1.4);
+   transition: transform; 
+ }
+
+ body {
+   text-align: center;
+   font-size: 14px;
  }
