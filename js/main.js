@@ -10,22 +10,22 @@ const PLAYER_LOOKUP = {
     'null': '',
 }
 
-const WINNING_COMBOS = [
-    [([i][j]) + ([i][j+1]) + ([i][j+2]) + ([i][j+3])], // vertical win
-    [([i][j]) + ([i+1][j]) + ([i+2][j]) + ([i+3][j])], // horizontal win
-    [([i][j]) + ([i+1][j+1]) + ([i+2][j+2]) + ([i+3][j+3])], // diagonal up right win
-    [([i][j]) + ([i-1][j+1]) + ([i-2][j+2]) + ([i-3][j+3])], // diagonal up left win
-];
+// const WINNING_COMBOS = [
+//     [([i][j]) + ([i][j+1]) + ([i][j+2]) + ([i][j+3])], // vertical win
+//     [([i][j]) + ([i+1][j]) + ([i+2][j]) + ([i+3][j])], // horizontal win
+//     [([i][j]) + ([i+1][j+1]) + ([i+2][j+2]) + ([i+3][j+3])], // diagonal up right win
+//     [([i][j]) + ([i-1][j+1]) + ([i-2][j+2]) + ([i-3][j+3])], // diagonal up left win
+// ];
 
-function getGameStatus() {
-    for (let arr of WINNING_COMBOS) {
-        while (i < WINNING_COMBOS.length) {
-            if (Math.abs[i] === 4) return turn;
-        }
-    }
-    if (!board.includes(null)) return 'T';
-    return null;
-    };
+// function getGameStatus() {
+//     for (let arr of WINNING_COMBOS) {
+//         while (i < WINNING_COMBOS.length) {
+//             if (Math.abs[i] === 4) return turn;
+//         }
+//     }
+//     if (!board.includes(null)) return 'T';
+//     return null;
+//     };
 
 /*----- app's state (variables) -----*/
 
