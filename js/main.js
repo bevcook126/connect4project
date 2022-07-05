@@ -9,89 +9,23 @@ const PLAYER_LOOKUP = {
     '-1': "OLIVE",
     'null': '',
 }
-// function checkVertical(columnIdx, rowIdx) {
-// while (i < columnArr.length) {
-//   [columnIdx, rowIdx++]
-    
-//     }
-// }
 
-// if (board[columnIdx, rowIdx],  )
+const WINNING_COMBOS = [
+    [([i][j]) + ([i][j+1]) + ([i][j+2]) + ([i][j+3])], // vertical win
+    [([i][j]) + ([i+1][j]) + ([i+2][j]) + ([i+3][j])], // horizontal win
+    [([i][j]) + ([i+1][j+1]) + ([i+2][j+2]) + ([i+3][j+3])], // diagonal up right win
+    [([i][j]) + ([i-1][j+1]) + ([i-2][j+2]) + ([i-3][j+3])], // diagonal up left win
+];
 
-// const WINNING_COMBOS = [
-//     [board[columnIdx, rowIdx], board[columnIdx++, rowIdx++], board[columnIdx += 2, rowIdx += 2], board[columnIdx += 3, rowIdx += 3]], // diagonal win 1
-//     [board[columnIdx, rowIdx], board[columnIdx--, rowIdx++], board[columnIdx -= 2, rowIdx += 2], board[columnIdx -=3, rowIdx +=3]], // diagonal win 2
-//     [board[columnIdx, rowIdx], board[columnIdx, rowIdx++], board[columnIdx, rowIdx +=2], board[columnIdx, rowIdx +=3]], // vertical win
-//     [board[columnIdx, rowIdx], board[collumnIdx++, rowIdx], board[collumnIdx += 2, rowIdx], board[collumnIdx += 3, rowIdx]] // horizontal win 
-// ]
-// // function getGameStatus() {
-// // if (Math.abs(board[columnIdx][rowIdx] + board[columnIdx++][rowIdx++] + [columnIdx++][rowIdx++] + [columnIdx++][rowIdx++] === 4))  
-// //     return turn; // diagonal win 1
-// // } else if 
-// //     (Math.abs(board[columnIdx][rowIdx] + board[columnIdx--][rowIdx++] + [columnIdx--][rowIdx++] + [columnIdx--][rowIdx++] === 4))
-// //     return turn; // diagonal win 2
-// // } else if 
-
-// // }; // diagonal
-
-// function getGameStatus() {
-//     for (let arr of WINNING_COMBOS) {
-//       if (Math.abs([arr[0]] + [arr[1]] + [arr[2]] + [arr[3]]) === 3) return turn;
-//     }
-//     if (!board.includes(null)) return 'T';
-//     return null;
-//   }
-
-// function getGameStatus() {
-//     for (let i = 0; i < ) {
-//       if (Math.abs(board[arr[0]] + board[arr[1]] + board[arr[2]]) === 3) return turn;
-//     }
-//     if (!board.includes(null)) return 'T';
-//     return null;
-//   }
-// }
-
-// function getGameStatus() {
-//     for (let i = 0; i < columnArr.length;) {
-//         if (Math.abs(board[i][i] + board[i][i++] + board[i][i++] + board[i][i++]) === 4) return turn; // vertical win
-//         if (Math.abs(board[i][i] + board[i++][i] + board[i++][i] + board[i++][i]) === 4) return turn; // horizontal win
-//         if (Math.abs(board[i][i] + board[i++][i++] + board[i++][i++] + board[i++][i++]) === 4) return turn; // diagonal win up-left
-//         if (Math.abs(board[i][i] + board[i--][i++] + board[i--][i++] + board[i--][i++]) === 4) return turn; // diagonal win up-right
-//         // tie
-//     }
-// }
-
-// function getGameStatus() {
-// for(let i = 0; i < board.length; i++) {
-//     for(let j = 0; j < board[i].length; i++) {
-//         if (Math.abs((board[i][j]) + (board[i][j++]) + (board[i][j += 2]) + (board[i][j += 3])) === 4) return turn; // vertical win
-//         // if (Math.abs(board[i][j] + board[i++][j] + board[i++][j] + board[i++][j]) === 4) {return turn}; // horizontal win
-//         // if (Math.abs(board[i][j] + board[i++][j++] + board[i++][j++] + board[i++][j++]) === 4) {return turn}; // diagonal win up-left
-//         // if (Math.abs(board[i][j] + board[i--][j++] + board[i--][j++] + board[i--][j++]) === 4) {return turn}; // diagonal win up-right
-//     }
-// }
-// }
-
-// function getGameStatus() {
-//     for(let arr of board) {
-//             if (Math.abs((board[columnIdx][rowIdx]) + (board[columnIdx][rowIdx++]) + (board[columnIdx][rowIdx += 2]) + (board[columnIdx][rowIdx += 3])) === 4) (console.log 'ok';); // vertical win
-//             // if (Math.abs(board[i][j] + board[i++][j] + board[i++][j] + board[i++][j]) === 4) {return turn}; // horizontal win
-//             // if (Math.abs(board[i][j] + board[i++][j++] + board[i++][j++] + board[i++][j++]) === 4) {return turn}; // diagonal win up-left
-//             // if (Math.abs(board[i][j] + board[i--][j++] + board[i--][j++] + board[i--][j++]) === 4) {return turn}; // diagonal win up-right
-//         }
-//     }
-
-// function checkVertical() {
-//     if (board[columnIdx][rowIdx]
-// }
-
-
-function horizontalWinCheck(){
-    for(var rowIdx=0;rowIdx<6;rowIdx++){
-        for(var columnIdx =0; columnIdx<4;columnIdx++)
-    
-return turn;
-}}; 
+function getGameStatus() {
+    for (let arr of WINNING_COMBOS) {
+        while (i < WINNING_COMBOS.length) {
+            if (Math.abs[i] === 4) return turn;
+        }
+    }
+    if (!board.includes(null)) return 'T';
+    return null;
+    };
 
 /*----- app's state (variables) -----*/
 
@@ -102,20 +36,18 @@ let gameStatus; // null -> game in play; 1/-1 player win, 'T' -> tie
 
 /*----- cached element references -----*/
 
-// const slotEls = [...document.querySelectorAll('#board > #slot')];
-// const msgEl = document.querySelector('h1');
-// const replayBtn = document.getElementById('replay');
+const replayBtn = document.querySelector('button');
 const chooserEls = [...document.querySelectorAll('#choosers > div')];
 const messageEl = document.querySelectorAll('h1');
 
 /*----- event listeners -----*/
 document.getElementById('choosers').addEventListener('click', handleChoice);
-
+replayBtn.addEventListener('click', init);
 
 
 /*----- functions -----*/
 init();
-// initiatlize state, then call render.
+// initialize state, then call render.
 function init() {
     board = [
       [null, null, null, null, null, null], // column 0
@@ -141,6 +73,7 @@ function render() {
     });
     renderChoosers();
     renderMessage();
+    replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
 // update all impacted state, then call render
@@ -172,3 +105,26 @@ function renderMessage() {
         messageEl.innerHTML = `${PLAYER_LOOKUP[turn]} Wins!`;
     }
 }
+
+// checkVertical = function(board) {
+//     for(i = 0; i < board.length; i++){
+//         for(j = 0; j < board[i].length; j++){
+//             if (Math.abs(board[i][j] + board[i][j+1] + board[i][j+2] + board[i][j+3]) === 4)
+//             return turn;
+//             }
+// }}
+
+// checkHorizontal = function(board) {
+//     for(i = 0; i < board.length; i++){
+//         for(j = 0; j < board[i].length; j++){
+//             if (Math.abs(board[i][j] + board[i+1][j] + board[i+2][j] + board[i+3][j]) === 4)
+//             return turn;
+//             }
+// }}
+
+// checkDiagonal = function(board) {
+//     for(i = 0; i < board.length; i++){
+//         for(j = 0; j < board[i].length; j++){
+//             if (Math.abs(board[i][j] + board[i+1][j] + board[i+2][j] + board[i+3][j]) === 4)
+//             return turn;
+//             
