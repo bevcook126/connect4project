@@ -9,14 +9,38 @@ const PLAYER_LOOKUP = {
     '-1': "OLIVE",
     'null': '',
 }
-function checkVertical() {
-for (let i = 0; i < columnArr.length; i++) {
+// function checkVertical(columnIdx, rowIdx) {
+// while (i < columnArr.length) {
+//   [columnIdx, rowIdx++]
     
-    }
-}
+//     }
+// }
 
+// if (board[columnIdx, rowIdx],  )
 
+// const WINNING_COMBOS = [
+//     [board[columnIdx, rowIdx], board[columnIdx++, rowIdx++], board[columnIdx += 2, rowIdx += 2], board[columnIdx += 3, rowIdx += 3]], // diagonal win 1
+//     [board[columnIdx, rowIdx], board[columnIdx--, rowIdx++], board[columnIdx -= 2, rowIdx += 2], board[columnIdx -=3, rowIdx +=3]], // diagonal win 2
+//     [board[columnIdx, rowIdx], board[columnIdx, rowIdx++], board[columnIdx, rowIdx +=2], board[columnIdx, rowIdx +=3]], // vertical win
+//     [board[columnIdx, rowIdx], board[collumnIdx++, rowIdx], board[collumnIdx += 2, rowIdx], board[collumnIdx += 3, rowIdx]] // horizontal win 
+// ]
+// // function getGameStatus() {
+// // if (Math.abs(board[columnIdx][rowIdx] + board[columnIdx++][rowIdx++] + [columnIdx++][rowIdx++] + [columnIdx++][rowIdx++] === 4))  
+// //     return turn; // diagonal win 1
+// // } else if 
+// //     (Math.abs(board[columnIdx][rowIdx] + board[columnIdx--][rowIdx++] + [columnIdx--][rowIdx++] + [columnIdx--][rowIdx++] === 4))
+// //     return turn; // diagonal win 2
+// // } else if 
 
+// // }; // diagonal
+
+// function getGameStatus() {
+//     for (let arr of WINNING_COMBOS) {
+//       if (Math.abs([arr[0]] + [arr[1]] + [arr[2]] + [arr[3]]) === 3) return turn;
+//     }
+//     if (!board.includes(null)) return 'T';
+//     return null;
+//   }
 
 // function getGameStatus() {
 //     for (let i = 0; i < ) {
@@ -26,6 +50,48 @@ for (let i = 0; i < columnArr.length; i++) {
 //     return null;
 //   }
 // }
+
+// function getGameStatus() {
+//     for (let i = 0; i < columnArr.length;) {
+//         if (Math.abs(board[i][i] + board[i][i++] + board[i][i++] + board[i][i++]) === 4) return turn; // vertical win
+//         if (Math.abs(board[i][i] + board[i++][i] + board[i++][i] + board[i++][i]) === 4) return turn; // horizontal win
+//         if (Math.abs(board[i][i] + board[i++][i++] + board[i++][i++] + board[i++][i++]) === 4) return turn; // diagonal win up-left
+//         if (Math.abs(board[i][i] + board[i--][i++] + board[i--][i++] + board[i--][i++]) === 4) return turn; // diagonal win up-right
+//         // tie
+//     }
+// }
+
+// function getGameStatus() {
+// for(let i = 0; i < board.length; i++) {
+//     for(let j = 0; j < board[i].length; i++) {
+//         if (Math.abs((board[i][j]) + (board[i][j++]) + (board[i][j += 2]) + (board[i][j += 3])) === 4) return turn; // vertical win
+//         // if (Math.abs(board[i][j] + board[i++][j] + board[i++][j] + board[i++][j]) === 4) {return turn}; // horizontal win
+//         // if (Math.abs(board[i][j] + board[i++][j++] + board[i++][j++] + board[i++][j++]) === 4) {return turn}; // diagonal win up-left
+//         // if (Math.abs(board[i][j] + board[i--][j++] + board[i--][j++] + board[i--][j++]) === 4) {return turn}; // diagonal win up-right
+//     }
+// }
+// }
+
+// function getGameStatus() {
+//     for(let arr of board) {
+//             if (Math.abs((board[columnIdx][rowIdx]) + (board[columnIdx][rowIdx++]) + (board[columnIdx][rowIdx += 2]) + (board[columnIdx][rowIdx += 3])) === 4) (console.log 'ok';); // vertical win
+//             // if (Math.abs(board[i][j] + board[i++][j] + board[i++][j] + board[i++][j]) === 4) {return turn}; // horizontal win
+//             // if (Math.abs(board[i][j] + board[i++][j++] + board[i++][j++] + board[i++][j++]) === 4) {return turn}; // diagonal win up-left
+//             // if (Math.abs(board[i][j] + board[i--][j++] + board[i--][j++] + board[i--][j++]) === 4) {return turn}; // diagonal win up-right
+//         }
+//     }
+
+// function checkVertical() {
+//     if (board[columnIdx][rowIdx]
+// }
+
+
+function horizontalWinCheck(){
+    for(var rowIdx=0;rowIdx<6;rowIdx++){
+        for(var columnIdx =0; columnIdx<4;columnIdx++)
+    
+return turn;
+}}; 
 
 /*----- app's state (variables) -----*/
 
@@ -85,6 +151,7 @@ function handleChoice(evt) {
     const rowIdx = columnArr.indexOf(null); // claim the first "null" slot
     columnArr[rowIdx] = turn;
     turn *= -1; // switch turns
+    gameStatus = getGameStatus;
     render();
 }
 // hide or show markers - hide if column does not have any "null" values
