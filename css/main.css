@@ -40,7 +40,8 @@ header {
     border-radius: 50%; 
     /* background: url(https://i.imgur.com/Jqp2LoD.png); */
     /* background: url(https://i.imgur.com/GfVAd6d.png); */
-    background-size: 7.2vh;
+    background-size: 7.6vh;
+    background-position: 50% 50%;
  }
 
 

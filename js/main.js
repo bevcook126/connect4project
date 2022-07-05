@@ -84,7 +84,7 @@ function handleChoice(evt) {
     const rowIdx = columnArr.indexOf(null); // claim the first "null" slot
     columnArr[rowIdx] = turn;
     turn *= -1; // switch turns
-    gameStatus = getGameStatus;
+    // gameStatus = getGameStatus;
     render();
 }
 // hide or show markers - hide if column does not have any "null" values
