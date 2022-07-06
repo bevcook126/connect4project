@@ -71,7 +71,7 @@ function render() {
     renderChoosers();
     gameStatus = getGameStatus;
     renderMessage();
-    replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
+    replayBtn.style.visibility = winner ? 'visible' : 'hidden';
 }
 
 // update all impacted state, then call render
