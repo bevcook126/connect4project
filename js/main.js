@@ -11,7 +11,7 @@ const PLAYER_LOOKUP = {
 
 function getGameStatus() {
     if (winner === -1) console.log("olive");
-    // if (!board.includes(null)) return 'T';
+    if (!board.includes(null)) return 'T';
     return null;
     };
 
@@ -20,7 +20,6 @@ function getGameStatus() {
 let board; // array of arrays
 let turn; // 1 or -1 or null for unclaimed div
 let gameStatus; // null -> game in play; 1/-1 player win, 'T' -> tie
-// let ignoreClick; // Boolean
 let winner = null;
 let player;
 function checkWin() {};
@@ -131,39 +130,90 @@ function checkVertWin(columnIdx, rowIdx, player) {
     return count === 4 ? winner = turn : null;
 }
 
-// function checkHorzLeftWin(columnIdx, rowIdx, player) {
-//     let count = 0;
-//     columnIdx--;
-//     while(board[columnIdx][rowIdx] === player && columnIdx <= 6) {
-//         count++;
-//         columnIdx--;
-//     }
-//     console.log (count);
-//     return count >= 4 ? winner = turn : null;
-// }
+function checkHorzWin(columnIdx, rowIdx, player) {
+    console.log("columnIdx", columnIdx);
+    console.log("rowIdx", rowIdx);
+    let count = 1;
+    let idx = columnIdx + 1;
+    while((idx < board.length) && board[idx][rowIdx] === player) {
+        count++;
+        idx++;
+    }
+    console.log (count);
+    idx = columnIdx - 1;
+    while((idx >= 0) && board[idx][rowIdx] === player) {
+        count++;
+        idx--;
+    }
+    console.log (count);
+    return count >= 4 ? winner = turn : null;
+}
 
+// function checkDia1Win(columnIdx, rowIdx, player) {
+//     let count = 1; 
+//     rowIdx++;
+//     columnIdx++;
+//     while (board[columnIdx][rowIdx] === player) {
+//         count++; 
+//         rowIdx--;
+//         columnIdx--; 
+//     }
+//     console.log(count)
+
+// }
                     
 function checkWin(columnIdx, rowIdx) {
     const player = board[columnIdx][rowIdx];
-    return checkVertWin(columnIdx, rowIdx, player)
-    //  || 
-    // checkHorzLeftWin(columnIdx, rowIdx, player) 
-    // ||
-    // checkDiaUpRightWin(columnIdx, rowIdx, player) ||
-    // checkDiaUpLeftWin(columnIdx, rowIdx, player)
+    return checkVertWin(columnIdx, rowIdx, player) || 
+    checkHorzWin(columnIdx, rowIdx, player) ||
+    checkDiagWinLeft(columnIdx, rowIdx)||
+    checkDiagWinRight(columnIdx, rowIdx)
     };
 
+    function checkDiagWinLeft(columnIdx, rowIdx) {
+        const player = board[columnIdx][rowIdx];
+        let count = 1;
+        let idx1 = columnIdx - 1; 
+        let idx2 = rowIdx + 1; 
+     
+        while (idx1 >= 0 && idx2 < board[0].length && board[idx1][idx2] === player) {
+            count++; 
+            idx1--;
+            idx2++;
+        }
+        idx1 = columnIdx + 1; 
+        idx2 = rowIdx - 1; 
+        while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
+            count++;
+            idx1++;
+            idx2--; 
+        }
+    
+        // console.log(idx1)
+        // console.log(idx2)
+        return count >= 4 ? winner = turn : null  
+    }
 
-
-
-// function checkHorzWin() {
-//     let i = columnIdx; let j = rowIdx;
-//     while(j < board[i].length) {
-//     i++; j++;
-//      if (((Math.abs([j]+[j+1]+[j+2]+[j+3])) >= 4) || Math.abs([j]+[j-1]+[j-2]+[j-3]) >= 4) {
-//         return true;
-//     } else { 
-//         return false;
-//     }
-// }
-
+    function checkDiagWinRight(columnIdx, rowIdx) {
+        const player = board[columnIdx][rowIdx];
+        let count = 1;
+        let idx1 = columnIdx + 1; 
+        let idx2 = rowIdx - 1; 
+     
+        while (idx2 >= 0 && idx1 < board[0].length && board[idx1][idx2] === player) {
+            count++; 
+            idx1--;
+            idx2++;
+        }
+        idx1 = columnIdx - 1; 
+        idx2 = rowIdx - 1; 
+        while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
+            count++;
+            idx1--;
+            idx2--; 
+        }
+    
+        // console.log(idx1)
+        // console.log(idx2)
+        return count >= 4 ? winner = turn : null  
+    }
