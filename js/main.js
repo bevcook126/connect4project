@@ -2,14 +2,12 @@
 const BACKGROUND_LOOKUP = {
     '1': "url(images/pepperoni.png)",
     '-1': "url(images/olive.png)",
-    'null': 'rgb(255, 221, 0, 0.873)',
-}
-const PLAYER_LOOKUP = {
-    '1': "PEPPERONI",
-    '-1': "OLIVE",
     'null': '',
 }
-
+const PLAYER_LOOKUP = {
+    '1': "OLIVE",
+    '-1': 'PEPPERONI',
+}
 
 function getGameStatus() {
     if (winner === -1) console.log("olive");
@@ -55,6 +53,8 @@ function init() {
       [null, null, null, null, null, null], // column 6
     ];
     turn = 1;
+    winner = null;
+    renderChoosers();
     render();
     // ignoreClick = false;
 
@@ -71,7 +71,8 @@ function render() {
     renderChoosers();
     gameStatus = getGameStatus;
     renderMessage();
-    replayBtn.style.visibility = winner ? 'visible' : 'hidden';
+    // replayBtn.style.visibility = winner ? 'visible' : 'hidden';
+
 }
 
 // update all impacted state, then call render
@@ -96,13 +97,15 @@ function handleChoice(evt) {
 function renderChoosers() {
     chooserEls.forEach(function(chooserEl, columnIdx) {
         chooserEl.style.visibility = board[columnIdx].includes(null) ? "visible" : "hidden";
-        if (winner === -1 || winner === 1) {chooserEl.style.visibility = "hidden"}
+        if (winner === -1 || winner === 1) {chooserEl.style.visibility = "hidden"};
     });
 }
 // change message - display players' turn/win
 function renderMessage() {
-    if (winner === null) {
-        messageEl.innerHTML = 'Next Player Turn'; // display player turn
+    if (winner === null && turn === -1) {
+        messageEl.innerHTML = "OLIVE's Turn"; // display player turn
+    } else if (winner === null && turn === 1) {
+        messageEl.innerHTML = "PEPPERONI's Turn"; // display player turn
     } else if (winner === 'T') {
         // Tie game
         messageEl.textContent = 'a big pizza TIE!';
@@ -129,13 +132,14 @@ function checkVertWin(columnIdx, rowIdx, player) {
 }
 
 function checkHorzLeftWin(columnIdx, rowIdx, player) {
-    let count = 1;
+    let count = 0;
     columnIdx--; 
-    while(board[columnIdx][rowIdx] === player && rowIdx >= 0) {
-        count++;
+    while(board[columnIdx][rowIdx] === player && columnIdx <= 6) {
+        count--;
+        columnIdx--;
     }
     console.log (count);
-    return count === 4 ? winner = turn : null;
+    return count >= 4 ? winner = turn : null;
 }
 
                     
