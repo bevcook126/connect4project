@@ -22,7 +22,7 @@ function getGameStatus() {
 let board; // array of arrays
 let turn; // 1 or -1 or null for unclaimed div
 let gameStatus; // null -> game in play; 1/-1 player win, 'T' -> tie
-let ignoreClick; // Boolean
+// let ignoreClick; // Boolean
 let winner = null;
 let player;
 function checkWin() {};
@@ -56,6 +56,7 @@ function init() {
     ];
     turn = 1;
     render();
+    // ignoreClick = false;
 
 }
 
@@ -68,6 +69,7 @@ function render() {
         })
     });
     renderChoosers();
+    gameStatus = getGameStatus;
     renderMessage();
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
@@ -79,19 +81,22 @@ function handleChoice(evt) {
     if (
         // columnIdx === -1 || 
         winner === true) return; // if something other than a chooser is clicked
-    const columnArr = board[columnIdx];
-    const rowIdx = columnArr.indexOf(null); // claim the first "null" slot
-    columnArr[rowIdx] = turn;
-    turn *= -1; // switch turns
-    winner = checkWin(columnIdx, rowIdx);
-    console.log (winner);
-    gameStatus = getGameStatus;
+        const columnArr = board[columnIdx];
+        const rowIdx = columnArr.indexOf(null); // claim the first "null" slot
+        columnArr[rowIdx] = turn;
+        turn *= -1; // switch turns
+        winner = checkWin(columnIdx, rowIdx);
+        console.log (winner);
+        // Guards
+        
+
     render();
 }
 // hide or show markers - hide if column does not have any "null" values
 function renderChoosers() {
     chooserEls.forEach(function(chooserEl, columnIdx) {
         chooserEl.style.visibility = board[columnIdx].includes(null) ? "visible" : "hidden";
+        if (winner === -1 || winner === 1) {chooserEl.style.visibility = "hidden"}
     });
 }
 // change message - display players' turn/win
@@ -103,29 +108,16 @@ function renderMessage() {
         messageEl.textContent = 'a big pizza TIE!';
     } else if 
         // player has won!
-        (winner === -1) {
+        (winner === 1) {
         messageEl.innerHTML = `OLIVE Wins!`;
     }  else if 
     // player has won!
-    (winner === 1) {
+    (winner === -1) {
     messageEl.innerHTML = `PEPPERONI Wins!`;
-}
-
-
-                    
-function checkWin(columnIdx, rowIdx) {
-    const player = board[columnIdx][rowIdx];
-    return checkVertWin(columnIdx, rowIdx, player)
-    //  || 
-    // checkHorzWin(columnIdx, rowIdx, player) ||
-    // checkDiaUpRightWin(columnIdx, rowIdx, player) ||
-    // checkDiaUpLeftWin(columnIdx, rowIdx, player)
-    };
-
+}}
 
 
 function checkVertWin(columnIdx, rowIdx, player) {
-    // const columnArr = board[columnIdx];
     let count = 1;
     rowIdx--;
     while(board[columnIdx][rowIdx] === player && rowIdx >= 0) {
@@ -134,7 +126,30 @@ function checkVertWin(columnIdx, rowIdx, player) {
     }
     console.log (count);
     return count === 4 ? winner = turn : null;
-}}
+}
+
+function checkHorzLeftWin(columnIdx, rowIdx, player) {
+    let count = 1;
+    columnIdx--; 
+    while(board[columnIdx][rowIdx] === player && rowIdx >= 0) {
+        count++;
+    }
+    console.log (count);
+    return count === 4 ? winner = turn : null;
+}
+
+                    
+function checkWin(columnIdx, rowIdx) {
+    const player = board[columnIdx][rowIdx];
+    return checkVertWin(columnIdx, rowIdx, player) || 
+    checkHorzLeftWin(columnIdx, rowIdx, player) 
+    // ||
+    // checkDiaUpRightWin(columnIdx, rowIdx, player) ||
+    // checkDiaUpLeftWin(columnIdx, rowIdx, player)
+    };
+
+
+
 
 // function checkHorzWin() {
 //     let i = columnIdx; let j = rowIdx;
