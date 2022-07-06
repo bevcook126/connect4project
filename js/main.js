@@ -105,7 +105,7 @@ function renderMessage() {
     // player has won!
     (winner === -1) {
         messageEl.innerHTML = 'PEPPERONI Wins!';
-    } else if (!board.includes(null)) { 
+    } else if (!(board[columnArr]).includes(null)) { 
         // Tie game
         messageEl.innerHTML = 'a big pizza TIE!';
 }}
@@ -153,16 +153,16 @@ function checkWin(columnIdx, rowIdx) {
     function checkDiagWinLeft(columnIdx, rowIdx) {
         const player = board[columnIdx][rowIdx];
         let count = 1;
-        let idx1 = columnIdx - (columnIdx >=1) ? 1 : 0; 
-        let idx2 = rowIdx + (rowIdx < board[0].length -1) ? 1 : 0; 
+        let idx1 = columnIdx - 1; 
+        let idx2 = columnIdx + 1; 
      
         while (idx1 >= 0 && idx2 < board[0].length && board[idx1][idx2] === player) {
             count++; 
             idx1--;
             idx2++;
         }
-        idx1 = columnIdx + (columnIdx < board.length - 1) ? 1 : 0; 
-        idx2 = rowIdx - (rowIdx >=1) ? 1 : 0;  
+        idx1 = columnIdx + 1; 
+        idx2 = rowIdx - 1;  
         while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
             count++;
             idx1++;
@@ -175,16 +175,16 @@ function checkWin(columnIdx, rowIdx) {
     function checkDiagWinRight(columnIdx, rowIdx) {
         const player = board[columnIdx][rowIdx];
         let count = 1;
-        let idx1 = columnIdx + ((columnIdx < board.length -1) ? 1 : 0); 
-        let idx2 = rowIdx - (rowIdx >=1) ? 1 : 0;         
-        while (idx1 < board.length  && idx2 >= 0 && board[idx1][idx2] === player) {
+        let idx1 = columnIdx + 1; 
+        let idx2 = rowIdx + 1;         
+        while (idx1 < board.length && idx2 < board[0].length && board[idx1][idx2] === player) {
             count++; 
-            idx1--;
+            idx1++;
             idx2++;
         }
         idx1 = columnIdx - 1; 
         idx2 = rowIdx - 1; 
-        while (idx1 > board.length && idx2 >= 0 && board[idx1][idx2] === player) {
+        while (idx1 >= 0 && idx2 >= 0 && board[idx1][idx2] === player) {
             count++;
             idx1--;
             idx2--; 

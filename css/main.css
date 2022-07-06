@@ -15,7 +15,8 @@ header {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
     border: 7vh solid rgb(179, 125, 55);
-    background: rgba(255, 221, 0, 0.873);
+    /* background: rgba(255, 221, 0, 0.873); */
+    background-color: pink;
     border-radius: 15%;
     margin: auto;
     position: relative;
