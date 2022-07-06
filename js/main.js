@@ -11,7 +11,7 @@ const PLAYER_LOOKUP = {
 
 function getGameStatus() {
     if (winner === -1) console.log("olive");
-    if (!board.includes(null)) return 'T';
+    // if (!board.includes(null)) return 'T';
     return null;
     };
 
@@ -106,17 +106,17 @@ function renderMessage() {
         messageEl.innerHTML = "OLIVE's Turn"; // display player turn
     } else if (winner === null && turn === 1) {
         messageEl.innerHTML = "PEPPERONI's Turn"; // display player turn
-    } else if (winner === 'T') {
-        // Tie game
-        messageEl.textContent = 'a big pizza TIE!';
     } else if 
-        // player has won!
-        (winner === 1) {
-        messageEl.innerHTML = `OLIVE Wins!`;
+    // player has won!
+    (winner === 1) {
+        messageEl.innerHTML = 'OLIVE Wins!';
     }  else if 
     // player has won!
     (winner === -1) {
-    messageEl.innerHTML = `PEPPERONI Wins!`;
+        messageEl.innerHTML = 'PEPPERONI Wins!';
+    } else if (winner === null && !board.includes(null)) { 
+        // Tie game
+        messageEl.innerHTML = 'a big pizza TIE!';
 }}
 
 
@@ -131,22 +131,23 @@ function checkVertWin(columnIdx, rowIdx, player) {
     return count === 4 ? winner = turn : null;
 }
 
-function checkHorzLeftWin(columnIdx, rowIdx, player) {
-    let count = 0;
-    columnIdx--; 
-    while(board[columnIdx][rowIdx] === player && columnIdx <= 6) {
-        count--;
-        columnIdx--;
-    }
-    console.log (count);
-    return count >= 4 ? winner = turn : null;
-}
+// function checkHorzLeftWin(columnIdx, rowIdx, player) {
+//     let count = 0;
+//     columnIdx--;
+//     while(board[columnIdx][rowIdx] === player && columnIdx <= 6) {
+//         count++;
+//         columnIdx--;
+//     }
+//     console.log (count);
+//     return count >= 4 ? winner = turn : null;
+// }
 
                     
 function checkWin(columnIdx, rowIdx) {
     const player = board[columnIdx][rowIdx];
-    return checkVertWin(columnIdx, rowIdx, player) || 
-    checkHorzLeftWin(columnIdx, rowIdx, player) 
+    return checkVertWin(columnIdx, rowIdx, player)
+    //  || 
+    // checkHorzLeftWin(columnIdx, rowIdx, player) 
     // ||
     // checkDiaUpRightWin(columnIdx, rowIdx, player) ||
     // checkDiaUpLeftWin(columnIdx, rowIdx, player)
