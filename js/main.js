@@ -10,38 +10,34 @@ const PLAYER_LOOKUP = {
     'null': '',
 }
 
-// const WINNING_COMBOS = [
-//     [([i][j]) + ([i][j+1]) + ([i][j+2]) + ([i][j+3])], // vertical win
-//     [([i][j]) + ([i+1][j]) + ([i+2][j]) + ([i+3][j])], // horizontal win
-//     [([i][j]) + ([i+1][j+1]) + ([i+2][j+2]) + ([i+3][j+3])], // diagonal up right win
-//     [([i][j]) + ([i-1][j+1]) + ([i-2][j+2]) + ([i-3][j+3])], // diagonal up left win
-// ];
 
-// function getGameStatus() {
-//     for (let arr of WINNING_COMBOS) {
-//         while (i < WINNING_COMBOS.length) {
-//             if (Math.abs[i] === 4) return turn;
-//         }
-//     }
-//     if (!board.includes(null)) return 'T';
-//     return null;
-//     };
+function getGameStatus() {
+    if (winner === -1) console.log("olive");
+    if (!board.includes(null)) return 'T';
+    return null;
+    };
 
 /*----- app's state (variables) -----*/
 
 let board; // array of arrays
 let turn; // 1 or -1 or null for unclaimed div
 let gameStatus; // null -> game in play; 1/-1 player win, 'T' -> tie
-// let ignoreClick; // Boolean
+let ignoreClick; // Boolean
+let winner = null;
+let player;
+function checkWin() {};
+
+
 
 /*----- cached element references -----*/
 
 const replayBtn = document.querySelector('button');
 const chooserEls = [...document.querySelectorAll('#choosers > div')];
-const messageEl = document.querySelectorAll('h1');
+const messageEl = document.querySelector('h1');
 
 /*----- event listeners -----*/
 document.getElementById('choosers').addEventListener('click', handleChoice);
+// guard - if winner is true
 replayBtn.addEventListener('click', init);
 
 
@@ -79,12 +75,17 @@ function render() {
 // update all impacted state, then call render
 function handleChoice(evt) {
     const columnIdx = chooserEls.indexOf(evt.target);
-    if (columnIdx === -1) return; // if something other than a chooser is clicked
+    console.log(evt.target, columnIdx);
+    if (
+        // columnIdx === -1 || 
+        winner === true) return; // if something other than a chooser is clicked
     const columnArr = board[columnIdx];
     const rowIdx = columnArr.indexOf(null); // claim the first "null" slot
     columnArr[rowIdx] = turn;
     turn *= -1; // switch turns
-    // gameStatus = getGameStatus;
+    winner = checkWin(columnIdx, rowIdx);
+    console.log (winner);
+    gameStatus = getGameStatus;
     render();
 }
 // hide or show markers - hide if column does not have any "null" values
@@ -95,36 +96,54 @@ function renderChoosers() {
 }
 // change message - display players' turn/win
 function renderMessage() {
-    if (gameStatus = null) {
-        messageEl.innerHTML = `${PLAYER_LOOKUP[turn]}'s Turn`; // display player turn
-    } else if (gameStatus === 'T') {
+    if (winner === null) {
+        messageEl.innerHTML = 'Next Player Turn'; // display player turn
+    } else if (winner === 'T') {
         // Tie game
         messageEl.textContent = 'a big pizza TIE!';
-    } else {
+    } else if 
         // player has won!
-        messageEl.innerHTML = `${PLAYER_LOOKUP[turn]} Wins!`;
-    }
+        (winner === -1) {
+        messageEl.innerHTML = `OLIVE Wins!`;
+    }  else if 
+    // player has won!
+    (winner === 1) {
+    messageEl.innerHTML = `PEPPERONI Wins!`;
 }
 
-// checkVertical = function(board) {
-//     for(i = 0; i < board.length; i++){
-//         for(j = 0; j < board[i].length; j++){
-//             if (Math.abs(board[i][j] + board[i][j+1] + board[i][j+2] + board[i][j+3]) === 4)
-//             return turn;
-//             }
-// }}
 
-// checkHorizontal = function(board) {
-//     for(i = 0; i < board.length; i++){
-//         for(j = 0; j < board[i].length; j++){
-//             if (Math.abs(board[i][j] + board[i+1][j] + board[i+2][j] + board[i+3][j]) === 4)
-//             return turn;
-//             }
-// }}
+                    
+function checkWin(columnIdx, rowIdx) {
+    const player = board[columnIdx][rowIdx];
+    return checkVertWin(columnIdx, rowIdx, player)
+    //  || 
+    // checkHorzWin(columnIdx, rowIdx, player) ||
+    // checkDiaUpRightWin(columnIdx, rowIdx, player) ||
+    // checkDiaUpLeftWin(columnIdx, rowIdx, player)
+    };
 
-// checkDiagonal = function(board) {
-//     for(i = 0; i < board.length; i++){
-//         for(j = 0; j < board[i].length; j++){
-//             if (Math.abs(board[i][j] + board[i+1][j] + board[i+2][j] + board[i+3][j]) === 4)
-//             return turn;
-//             
+
+
+function checkVertWin(columnIdx, rowIdx, player) {
+    // const columnArr = board[columnIdx];
+    let count = 1;
+    rowIdx--;
+    while(board[columnIdx][rowIdx] === player && rowIdx >= 0) {
+        count++;
+        rowIdx--;
+    }
+    console.log (count);
+    return count === 4 ? winner = turn : null;
+}}
+
+// function checkHorzWin() {
+//     let i = columnIdx; let j = rowIdx;
+//     while(j < board[i].length) {
+//     i++; j++;
+//      if (((Math.abs([j]+[j+1]+[j+2]+[j+3])) >= 4) || Math.abs([j]+[j-1]+[j-2]+[j-3]) >= 4) {
+//         return true;
+//     } else { 
+//         return false;
+//     }
+// }
+
