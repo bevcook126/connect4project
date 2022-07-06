@@ -4,10 +4,6 @@ const BACKGROUND_LOOKUP = {
     '-1': "url(images/olive.png)",
     'null': '',
 }
-const PLAYER_LOOKUP = {
-    '1': "OLIVE",
-    '-1': 'PEPPERONI',
-}
 
 /*----- app's state (variables) -----*/
 
@@ -16,7 +12,6 @@ let turn; // 1 or -1 or null for unclaimed div
 let winner = null;
 let player;
 function checkWin() {};
-
 
 
 /*----- cached element references -----*/
@@ -51,6 +46,7 @@ function init() {
     render();
 
 }
+
 
 function render() {
     // iterate over column arrays
@@ -105,7 +101,7 @@ function renderMessage() {
     // player has won!
     (winner === -1) {
         messageEl.innerHTML = 'PEPPERONI Wins!';
-    } else if (!(board[columnArr]).includes(null)) { 
+    } else if (winner === 'T') { 
         // Tie game
         messageEl.innerHTML = 'a big pizza TIE!';
 }}
@@ -147,50 +143,52 @@ function checkWin(columnIdx, rowIdx) {
     return checkVertWin(columnIdx, rowIdx, player) || 
     checkHorzWin(columnIdx, rowIdx, player) ||
     checkDiagWinLeft(columnIdx, rowIdx)||
-    checkDiagWinRight(columnIdx, rowIdx)
+    checkDiagWinRight(columnIdx, rowIdx) ||
+    (board.flat().includes(null) ?null : 'T')
     };
 
-    function checkDiagWinLeft(columnIdx, rowIdx) {
-        const player = board[columnIdx][rowIdx];
-        let count = 1;
-        let idx1 = columnIdx - 1; 
-        let idx2 = columnIdx + 1; 
-     
-        while (idx1 >= 0 && idx2 < board[0].length && board[idx1][idx2] === player) {
-            count++; 
-            idx1--;
-            idx2++;
-        }
-        idx1 = columnIdx + 1; 
-        idx2 = rowIdx - 1;  
-        while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
-            count++;
-            idx1++;
-            idx2--; 
-        }
-  
-        return count >= 4 ? winner = turn : null  
+function checkDiagWinLeft(columnIdx, rowIdx) {
+    const player = board[columnIdx][rowIdx];
+    let count = 1;
+    let idx1 = columnIdx - 1; 
+    let idx2 = columnIdx + 1; 
+    
+    while (idx1 >= 0 && idx2 < board[0].length && board[idx1][idx2] === player) {
+        count++; 
+        idx1--;
+        idx2++;
+    }
+    idx1 = columnIdx + 1; 
+    idx2 = rowIdx - 1;  
+    while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
+        count++;
+        idx1++;
+        idx2--; 
     }
 
-    function checkDiagWinRight(columnIdx, rowIdx) {
-        const player = board[columnIdx][rowIdx];
-        let count = 1;
-        let idx1 = columnIdx + 1; 
-        let idx2 = rowIdx + 1;         
-        while (idx1 < board.length && idx2 < board[0].length && board[idx1][idx2] === player) {
-            count++; 
-            idx1++;
-            idx2++;
-        }
-        idx1 = columnIdx - 1; 
-        idx2 = rowIdx - 1; 
-        while (idx1 >= 0 && idx2 >= 0 && board[idx1][idx2] === player) {
-            count++;
-            idx1--;
-            idx2--; 
-        }
-    
-        console.log("idx1", idx1)
-        console.log("idx2", idx2)
-        return count >= 4 ? winner = turn : null  
+    return count >= 4 ? winner = turn : null  
+}
+
+function checkDiagWinRight(columnIdx, rowIdx) {
+    const player = board[columnIdx][rowIdx];
+    let count = 1;
+    let idx1 = columnIdx + 1; 
+    let idx2 = rowIdx + 1;         
+    while (idx1 < board.length && idx2 < board[0].length && board[idx1][idx2] === player) {
+        count++; 
+        idx1++;
+        idx2++;
     }
+    idx1 = columnIdx - 1; 
+    idx2 = rowIdx - 1; 
+    while (idx1 >= 0 && idx2 >= 0 && board[idx1][idx2] === player) {
+        count++;
+        idx1--;
+        idx2--; 
+    }
+
+    console.log("idx1", idx1)
+    console.log("idx2", idx2)
+    return count >= 4 ? winner = turn : null  
+}
+
