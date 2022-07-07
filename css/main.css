@@ -15,8 +15,7 @@ header {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
     border: 7vh solid rgb(179, 125, 55);
-    background: rgba(255, 221, 0, 0.873);
-    /* background-color: pink; */
+    background: #ffe424;
     border-radius: 15%;
     margin: auto;
     position: relative;
@@ -39,8 +38,6 @@ header {
     border: 3px solid orange;
     border-collapse: separate; 
     border-radius: 50%; 
-    /* background: url(https://i.imgur.com/Jqp2LoD.png); */
-    /* background: url(https://i.imgur.com/GfVAd6d.png); */
     background-size: 7.6vh;
     background-position: 50% 50%;
  }

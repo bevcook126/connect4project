@@ -44,9 +44,7 @@ function init() {
     winner = null;
     renderChoosers();
     render();
-
 }
-
 
 function render() {
     // iterate over column arrays
@@ -57,28 +55,19 @@ function render() {
         })
     });
     renderChoosers();
-    // gameStatus = getGameStatus;
     renderMessage();
-    // replayBtn.style.visibility = winner ? 'visible' : 'hidden';
-
 }
 
 // update all impacted state, then call render
 function handleChoice(evt) {
     const columnIdx = chooserEls.indexOf(evt.target);
-    console.log(evt.target, columnIdx);
-    if (
-        winner === true) return; // if something other than a chooser is clicked
+    if (winner === true) return; // if something other than a chooser is clicked
         const columnArr = board[columnIdx];
         const rowIdx = columnArr.indexOf(null); // claim the first "null" slot
         columnArr[rowIdx] = turn;
         turn *= -1; // switch turns
         winner = checkWin(columnIdx, rowIdx);
-        console.log (winner);
-        // Guards
-        
-
-    render();
+        render();
 }
 // hide or show markers - hide if column does not have any "null" values
 function renderChoosers() {
@@ -104,8 +93,17 @@ function renderMessage() {
     } else if (winner === 'T') { 
         // Tie game
         messageEl.innerHTML = 'a big pizza TIE!';
-}}
+    }
+}
 
+function checkWin(columnIdx, rowIdx) {
+    const player = board[columnIdx][rowIdx];
+    return checkVertWin(columnIdx, rowIdx, player) || 
+    checkHorzWin(columnIdx, rowIdx, player) ||
+    checkDiagWinLeft(columnIdx, rowIdx)||
+    checkDiagWinRight(columnIdx, rowIdx) ||
+    (board.flat().includes(null) ?null : 'T')
+};
 
 function checkVertWin(columnIdx, rowIdx, player) {
     let count = 1;
@@ -114,45 +112,29 @@ function checkVertWin(columnIdx, rowIdx, player) {
         count++;
         rowIdx--;
     }
-    console.log (count);
     return count === 4 ? winner = turn : null;
 }
 
 function checkHorzWin(columnIdx, rowIdx, player) {
-    console.log("columnIdx", columnIdx);
-    console.log("rowIdx", rowIdx);
     let count = 1;
     let idx = columnIdx + 1;
     while((idx < board.length) && board[idx][rowIdx] === player) {
         count++;
         idx++;
     }
-    console.log (count);
     idx = columnIdx - 1;
     while((idx >= 0) && board[idx][rowIdx] === player) {
         count++;
         idx--;
     }
-    console.log (count);
     return count >= 4 ? winner = turn : null;
 }
-
-                    
-function checkWin(columnIdx, rowIdx) {
-    const player = board[columnIdx][rowIdx];
-    return checkVertWin(columnIdx, rowIdx, player) || 
-    checkHorzWin(columnIdx, rowIdx, player) ||
-    checkDiagWinLeft(columnIdx, rowIdx)||
-    checkDiagWinRight(columnIdx, rowIdx) ||
-    (board.flat().includes(null) ?null : 'T')
-    };
-
+     
 function checkDiagWinLeft(columnIdx, rowIdx) {
     const player = board[columnIdx][rowIdx];
     let count = 1;
     let idx1 = columnIdx - 1; 
     let idx2 = columnIdx + 1; 
-    
     while (idx1 >= 0 && idx2 < board[0].length && board[idx1][idx2] === player) {
         count++; 
         idx1--;
@@ -165,7 +147,6 @@ function checkDiagWinLeft(columnIdx, rowIdx) {
         idx1++;
         idx2--; 
     }
-
     return count >= 4 ? winner = turn : null  
 }
 
@@ -186,9 +167,12 @@ function checkDiagWinRight(columnIdx, rowIdx) {
         idx1--;
         idx2--; 
     }
-
-    console.log("idx1", idx1)
-    console.log("idx2", idx2)
     return count >= 4 ? winner = turn : null  
 }
 
+function playAudio() {
+    var song = new Audio('./audio/amore.mp3');
+    if (winner !== null) {
+    song.play();
+    }
+}
