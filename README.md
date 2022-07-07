@@ -17,6 +17,7 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 ## Getting Started
 
 [click to play Connect 4!](https://bevcook126.github.io/connect4project/)
+Pepperoni is up first. Click on the pizza slice buttons on the top of the crust to drop your first topping.
 
 ## Next Steps
 
