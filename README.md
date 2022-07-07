@@ -6,7 +6,7 @@
       <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white">
    </a> 
 <a href="bevcook126@gmail.com" target="_blank">
-      <img src="https://img.shields.io/badge/-email-c14438?style=flat&logo=Gmail&logoColor=white">
+      <img src="https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white">
    </a>
 </a>
 </div>
@@ -22,26 +22,30 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 # Technologies Used :computer:
 
+<div align ="center">
 ![JavaScript](https://img.shields.io/badge/-JavaScript-333?style=flat&logo=javascript)
 ![HTML5](https://img.shields.io/badge/-HTML5-333?style=flat&logo=html5)
 ![CSS3](https://img.shields.io/badge/-CSS-333?style=flat&logo=css3)
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
+</div>
 
 # Getting Started :atom_symbol:
 
 [click to play Connect 4!](https://bevcook126.github.io/connect4project/)
-Pepperoni is up first. Click on the pizza slice buttons on the top of the crust to drop your first topping.
+
+Pepperoni is up first. Click on the pizza slice buttons on the top of the crust to drop your first topping. Your goal is to line up your 4 of your toppings in a row either vertically, horizontally, or diagonally.
+To reset the board, click on the rolling pin button at the bottom of the page.
 
 # Next Steps :fast_forward:
 
 ## Future Enhancements:
 
--[] **Animation upon determination of a winner**
+- [ ] **Animation upon determination of a winner**
 
--[] **Audio effects during gameplay** 
+- [ ] **Audio effects during gameplay** 
 
--[] **Option for 'Player versus Computer'** 
+- [ ] **Option for 'Player versus Computer'** 
 
 ### References
 
