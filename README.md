@@ -3,10 +3,10 @@
 <h3>https://github.com/bevcook126/connect4project</h3>
 <h5>Beverly Cook</h5>
 <a href="https://www.linkedin.com/in/beverly-cook-093625153/" target="_blank">
-      <img src="https://img.shields.io/badge/-yourlinkedin.com/in/username-blue?style=flat&logo=Linkedin&logoColor=white">
+      <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white">
    </a> 
 <a href="mailto:bevcook126@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/-youremail@gmail.com>-c14438?style=flat&logo=Gmail&logoColor=white">
+    <img src="https://img.shields.io/badge/-email->-c14438?style=flat&logo=Gmail&logoColor=white">
 </a>
 </div>
 
