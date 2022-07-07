@@ -26,6 +26,8 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 - **Sound effects during gameplay:** audio plays once a winner is determined, but to make the game more engaging, I want to add audio for dropping toppings on the board.
 
+-**Player versus computer:** as of now, the player can only play against another player. In the future, I would like to include AI in the game so a user can play on their own againt a comuter.
+
 ### References
 
 [What is the origin of Connect Four?](https://www.trianglelawngames.com/what-is-the-origin-of-connect-four/#:~:text=It%20was%20in%201974%20when,continues%20to%20sell%20the%20game.)
