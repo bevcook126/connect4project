@@ -16,7 +16,7 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 ## Getting Started
 
-[click to play Connect 4!](deployment url)
+[click to play Connect 4!](https://bevcook126.github.io/connect4project/)
 
 ## Next Steps
 
