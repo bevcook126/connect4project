@@ -101,7 +101,7 @@ h1 {
  body {
    text-align: center;
    font-size: 14px;
-   background: url(/images/background.png)
+   background: url(/images/background.png);
  }
 
  .double-border {
