@@ -170,9 +170,9 @@ function checkDiagWinRight(columnIdx, rowIdx) {
     return count >= 4 ? winner = turn : null  
 }
 
-function playAudio() {
-    var song = new Audio('./audio/amore.mp3');
-    if (winner !== null) {
-    song.play();
-    }
-}
+// function playAudio() {
+    // var song = new Audio('./audio/amore.mp3');
+    // if (winner !== null) {
+    // song.play();
+//     }
+// }

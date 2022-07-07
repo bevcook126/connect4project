@@ -1,11 +1,23 @@
 * {
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    box-sizing: border-box;
- }
+   }
 
 header {
     text-align: center;
     font-size: 36px;
+    background: white;
+    border: 4px solid black;
+    width: 50vh;
+    margin: 1vmin auto;
+    font-weight: 700;
+}
+
+h1 {
+  background: white;
+  border: 4px solid black;
+  width: 50vh;
+  margin: 1vmin auto;
 }
 
 .board {
@@ -42,7 +54,6 @@ header {
     background-position: 50% 50%;
  }
 
-
  button {
    justify-self: center;
    width: 25vmin;
@@ -55,11 +66,12 @@ header {
    outline: none;
    background: url(https://i.imgur.com/wTkt4EY.png) no-repeat;
    background-size: 25vmin;
-   opacity: 75%;
-   
+   /* opacity: 75%; */
  }
+
  button:hover {
-   opacity: 100%;
+   font-weight: 800;
+   font-style: italic;
  }
 
  main {
@@ -71,7 +83,7 @@ header {
  #choosers {
    display: flex;
    justify-content: space-evenly;
-   margin-top: -1vmin;
+   margin-top: -.7vmin;
    position: absolute;
    width: 62vh;
    align-items: center;
@@ -86,10 +98,19 @@ header {
 
  #choosers > div:hover {
    transform: scale(1.4);
-   transition: transform; 
+   /* transition: transform;  */
  }
 
  body {
    text-align: center;
    font-size: 14px;
+   background: url(https://i.imgur.com/QsFDmTx.jpg);
  }
+
+ .double-border {
+  border: 4.5px solid black;
+  background: black;
+  position: relative;
+  z-index: -1;
+  border-radius: 15.3%
+}
