@@ -8,7 +8,7 @@ header {
     font-size: 36px;
     background: white;
     border: 4px solid black;
-    width: 50vh;
+    width: 60vh;
     margin: 1vmin auto;
     font-weight: 700;
 }
@@ -70,8 +70,10 @@ h1 {
  }
 
  button:hover {
-   font-weight: 800;
-   font-style: italic;
+   /* font-weight: 800; */
+   /* font-style: italic; */
+   transform: scale(1.2);
+
  }
 
  main {
@@ -98,7 +100,6 @@ h1 {
 
  #choosers > div:hover {
    transform: scale(1.4);
-   /* transition: transform;  */
  }
 
  body {

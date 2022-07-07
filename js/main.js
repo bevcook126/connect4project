@@ -1,14 +1,10 @@
 /*----- constants -----*/
-const BACKGROUND_LOOKUP = {
+const BACKGROUND_LOOKUP = { // player tokens
     '1': "url(images/pepperoni.png)",
     '-1': "url(images/olive.png)",
     'null': '',
 }
-var tieAudio = new Audio('./audio/amore.mp3');
-var pepperoniAudio = new Audio('./audio/pepperoni.mp3');
-var oliveAudio = new Audio('./audio/olive.mp3');
-
-
+var audio = new Audio('./audio/amore.mp3');
 
 /*----- app's state (variables) -----*/
 
@@ -17,7 +13,6 @@ let turn; // 1 or -1 or null for unclaimed div
 let winner = null;
 let player;
 function checkWin() {};
-
 
 /*----- cached element references -----*/
 
@@ -30,11 +25,10 @@ const messageEl = document.querySelector('h1');
 document.getElementById('choosers').addEventListener('click', handleChoice);
 replayBtn.addEventListener('click', init);
 
-
 /*----- functions -----*/
 
-init();
-// initialize state, then call render.
+init(); // initialize state, then call render.
+
 function init() {
     board = [
       [null, null, null, null, null, null], // column 0
@@ -49,12 +43,8 @@ function init() {
     winner = null;
     renderChoosers();
     render();
-    tieAudio.pause();
-    tieAudio.currentTime = 0;
-    pepperoniAudio.pause();
-    pepperoniAudio.currentTime = 0;
-    oliveAudio.pause();
-    oliveAudio.currentTime = 0;
+    audio.pause();
+    audio.currentTime = 0;
 }
 
 function render() {
@@ -69,7 +59,6 @@ function render() {
     renderMessage();
 }
 
-// update all impacted state, then call render
 function handleChoice(evt) {
     const columnIdx = chooserEls.indexOf(evt.target);
     if (winner === true) return; // if something other than a chooser is clicked
@@ -80,33 +69,38 @@ function handleChoice(evt) {
         winner = checkWin(columnIdx, rowIdx);
         render();
 }
-// hide or show markers - hide if column does not have any "null" values
+
 function renderChoosers() {
     chooserEls.forEach(function(chooserEl, columnIdx) {
         chooserEl.style.visibility = board[columnIdx].includes(null) ? "visible" : "hidden";
         if (winner === -1 || winner === 1) {chooserEl.style.visibility = "hidden"};
     });
 }
-// change message - display players' turn/win
+
 function renderMessage() {
     if (winner === null && turn === -1) {
         messageEl.innerHTML = "OLIVE's Turn"; // display player turn
+        messageEl.style.color = "olive";
+        messageEl.style.backgroundColor = "white";
     } else if (winner === null && turn === 1) {
         messageEl.innerHTML = "PEPPERONI's Turn"; // display player turn
-    } else if 
-    // player has won!
-    (winner === 1) {
+        messageEl.style.color = "red";
+        messageEl.style.backgroundColor = "white";
+    } else if (winner === 1) {
         messageEl.innerHTML = 'OLIVE Wins!';
-        oliveAudio.play();
-    }  else if 
-    // player has won!
-    (winner === -1) {
+        messageEl.style.color = "white";
+        messageEl.style.backgroundColor = "olive";
+        audio.play();
+    }  else if (winner === -1) {
         messageEl.innerHTML = 'PEPPERONI Wins!';
-        pepperoniAudio.play();
-    } else if (winner === 'T') { 
-        // Tie game
+        messageEl.style.color = "white";
+        messageEl.style.backgroundColor = "red";
+        audio.play();
+    } else if (winner === 'T') { // tie game
         messageEl.innerHTML = 'a big pizza TIE!';
-        tieAudio.play();
+        messageEl.style.color = "black";
+        messageEl.style.backgroundColor = "gold";
+        audio.play();
     }
 }
 
@@ -184,12 +178,6 @@ function checkDiagWinRight(columnIdx, rowIdx) {
     return count >= 4 ? winner = turn : null  
 }
 
-// function playAudio() {
-    // var song = new Audio('./audio/amore.mp3');
-    // if (winner !== null) {
-    // song.play();
-//     }
-// }
 
 
 
