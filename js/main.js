@@ -4,7 +4,9 @@ const BACKGROUND_LOOKUP = {
     '-1': "url(images/olive.png)",
     'null': '',
 }
-var audio = new Audio('./audio/amore.mp3');
+var tieAudio = new Audio('./audio/amore.mp3');
+var pepperoniAudio = new Audio('./audio/pepperoni.mp3');
+var oliveAudio = new Audio('./audio/olive.mp3');
 
 
 
@@ -47,6 +49,12 @@ function init() {
     winner = null;
     renderChoosers();
     render();
+    tieAudio.pause();
+    tieAudio.currentTime = 0;
+    pepperoniAudio.pause();
+    pepperoniAudio.currentTime = 0;
+    oliveAudio.pause();
+    oliveAudio.currentTime = 0;
 }
 
 function render() {
@@ -89,16 +97,16 @@ function renderMessage() {
     // player has won!
     (winner === 1) {
         messageEl.innerHTML = 'OLIVE Wins!';
-        audio.play();
+        oliveAudio.play();
     }  else if 
     // player has won!
     (winner === -1) {
         messageEl.innerHTML = 'PEPPERONI Wins!';
-        audio.play();
+        pepperoniAudio.play();
     } else if (winner === 'T') { 
         // Tie game
         messageEl.innerHTML = 'a big pizza TIE!';
-        audio.play();
+        tieAudio.play();
     }
 }
 
