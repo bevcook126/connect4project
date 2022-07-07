@@ -22,17 +22,17 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 <div align = center><h2>Technologies Used :computer:</h2></div>
 
-<div align ="center">
+
 ![JavaScript](https://img.shields.io/badge/-JavaScript-333?style=flat&logo=javascript)
 ![HTML5](https://img.shields.io/badge/-HTML5-333?style=flat&logo=html5)
 ![CSS3](https://img.shields.io/badge/-CSS-333?style=flat&logo=css3)
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
-</div>
+
 
 <div align = center><h2>Getting Started :atom_symbol:</h2></div>
 
-[click to play Connect 4!](https://bevcook126.github.io/connect4project/)
+[Click to play Connect 4!](https://bevcook126.github.io/connect4project/)
 
 Pepperoni is up first. Click on the pizza slice buttons on the top of the crust to drop your first topping. Your goal is to line up your 4 of your toppings in a row either vertically, horizontally, or diagonally.
 To reset the board, click on the rolling pin button at the bottom of the page.
