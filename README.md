@@ -1,6 +1,6 @@
 # Connect 4
 
-Versions of Connect 4 date back thousands of years, entertaining sea-bound sailors. The Connect 4 we know today became a sensation in the 1970s when it was distributed by Milton Bradley, and is still sold today by Hasbro. 
+Versions of Connect 4 date back hundreds of years, entertaining sea-bound sailors. The Connect 4 we know today became a sensation in the 1970s when it was distributed by Milton Bradley, and is still sold today by Hasbro. 
 
 In my version of Connect 4, players will compete using their chosen pizza toppings as tokens. A winner will be determined when 4 or more of the same pizza topping are lined up consecutively in a row, column, or on a diagonal. In a physical version of Connect 4, the player drops their token from the top of a chosen column, letting gravity take it to the next available slot. In my version, small slices of pizza at the top of the board represent each column, and upon clicking them, the player drops their topping in that chosen column. If a player wants to reset the game (either during gameplay or after a winner is determined), they can resert the board by clicking the rolling pin button and "rolling out some new dough". When the game results in a win or tie, the players can celebrate their hard work with That's Amore! (and hopefully some pizza on the side).
 
