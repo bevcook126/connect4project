@@ -4,6 +4,9 @@ const BACKGROUND_LOOKUP = {
     '-1': "url(images/olive.png)",
     'null': '',
 }
+var audio = new Audio('./audio/amore.mp3');
+
+
 
 /*----- app's state (variables) -----*/
 
@@ -86,13 +89,16 @@ function renderMessage() {
     // player has won!
     (winner === 1) {
         messageEl.innerHTML = 'OLIVE Wins!';
+        audio.play();
     }  else if 
     // player has won!
     (winner === -1) {
         messageEl.innerHTML = 'PEPPERONI Wins!';
+        audio.play();
     } else if (winner === 'T') { 
         // Tie game
         messageEl.innerHTML = 'a big pizza TIE!';
+        audio.play();
     }
 }
 
@@ -176,3 +182,6 @@ function checkDiagWinRight(columnIdx, rowIdx) {
     // song.play();
 //     }
 // }
+
+
+
