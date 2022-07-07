@@ -111,7 +111,7 @@ function checkWin(columnIdx, rowIdx) {
     checkDiagWinLeft(columnIdx, rowIdx)||
     checkDiagWinRight(columnIdx, rowIdx) ||
     (board.flat().includes(null) ?null : 'T')
-};
+}
 
 function checkVertWin(columnIdx, rowIdx, player) {
     let count = 1;
