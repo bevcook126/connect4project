@@ -34,7 +34,7 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 [Click to play Connect 4!](https://bevcook126.github.io/connect4project/)
 
-Pepperoni is up first. Click on the pizza slice buttons on the top of the crust to drop your first topping. Your goal is to line up your 4 of your toppings in a row either vertically, horizontally, or diagonally.
+<div align = left>Pepperoni is up first. Click on the pizza slice buttons on the top of the crust to drop your first topping. Your goal is to line up your 4 of your toppings in a row either vertically, horizontally, or diagonally.
 To reset the board, click on the rolling pin button at the bottom of the page.
 
 <div align = center><h2>Next Steps :fast_forward:</h2></div>
@@ -50,3 +50,5 @@ To reset the board, click on the rolling pin button at the bottom of the page.
 ### References
 
 [What is the origin of Connect Four?](https://www.trianglelawngames.com/what-is-the-origin-of-connect-four/#:~:text=It%20was%20in%201974%20when,continues%20to%20sell%20the%20game.)
+
+</div>
