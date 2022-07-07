@@ -6,7 +6,7 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 ## Screenshot
 
-<img src="https://i.imgur.com/wCixCNz.png">
+<img src="https://i.imgur.com/k4HqLKF.png">
 
 ## Technologies Used
 
