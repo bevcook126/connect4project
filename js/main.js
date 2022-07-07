@@ -142,7 +142,7 @@ function checkDiagWinLeft(columnIdx, rowIdx) {
     const player = board[columnIdx][rowIdx];
     let count = 1;
     let idx1 = columnIdx - 1; 
-    let idx2 = columnIdx + 1; 
+    let idx2 = rowIdx + 1; 
     while (idx1 >= 0 && idx2 < board[0].length && board[idx1][idx2] === player) {
         count++; 
         idx1--;

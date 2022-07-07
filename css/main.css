@@ -66,14 +66,10 @@ h1 {
    outline: none;
    background: url(https://i.imgur.com/wTkt4EY.png) no-repeat;
    background-size: 25vmin;
-   /* opacity: 75%; */
  }
 
  button:hover {
-   /* font-weight: 800; */
-   /* font-style: italic; */
    transform: scale(1.2);
-
  }
 
  main {
