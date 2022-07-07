@@ -5,8 +5,9 @@
 <a href="https://www.linkedin.com/in/beverly-cook-093625153/" target="_blank">
       <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white">
    </a> 
-<a href="mailto:bevcook126@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/-email->-c14438?style=flat&logo=Gmail&logoColor=white">
+<a href="bevcook126@gmail.com" target="_blank">
+      <img src="https://img.shields.io/badge/-email>-c14438?style=flat&logo=Gmail&logoColor=white">
+   </a>
 </a>
 </div>
 
