@@ -46,6 +46,8 @@ To reset the board, click on the rolling pin button at the bottom of the page.
 
 - [ ] **Animation upon determination of a winner**
 
+- [ ] **Mobile-friendly version**
+
 - [ ] **Audio effects during gameplay** 
 
 - [ ] **Option for 'Player versus Computer'** 
