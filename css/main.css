@@ -1,16 +1,16 @@
 * {
-   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   box-sizing: border-box;
-   }
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-sizing: border-box;
+}
 
 header {
-    text-align: center;
-    font-size: 36px;
-    background: white;
-    border: 4px solid black;
-    width: 70vh;
-    margin: 1vmin auto;
-    font-weight: 700;
+  text-align: center;
+  font-size: 36px;
+  background: white;
+  border: 4px solid black;
+  width: 70vh;
+  margin: 1vmin auto;
+  font-weight: 700;
 }
 
 h1 {
@@ -21,90 +21,90 @@ h1 {
 }
 
 .board {
-    display: grid;
-    height: 75vh;
-    width: 75vh;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    border: 7vh solid rgb(179, 125, 55);
-    background: #ffe424;
-    border-radius: 15%;
-    margin: auto;
-    position: relative;
-  }
-  
- .column {
-    display: flex;
-    flex-direction: column-reverse;
-    height: 61vh;
-    width: 1fr;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
- }
+  display: grid;
+  height: 75vh;
+  width: 75vh;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  border: 7vh solid rgb(179, 125, 55);
+  background: #ffe424;
+  border-radius: 15%;
+  margin: auto;
+  position: relative;
+}
 
- .slot {
-    display: flex;
-    height: 8vh;
-    width: 8vh;
-    border: 3px solid orange;
-    border-collapse: separate; 
-    border-radius: 50%; 
-    background-size: 7.6vh;
-    background-position: 50% 50%;
- }
+.column {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 61vh;
+  width: 1fr;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
- button {
-   justify-self: center;
-   width: 25vmin;
-   height: 7vmin;
-   margin: 2vmin;
-   background: transparent;
-   color: black;
-   border: none;
-   font-size: 1.5vmin;
-   outline: none;
-   background: url(https://i.imgur.com/wTkt4EY.png) no-repeat;
-   background-size: 25vmin;
- }
+.slot {
+  display: flex;
+  height: 8vh;
+  width: 8vh;
+  border: 3px solid orange;
+  border-collapse: separate;
+  border-radius: 50%;
+  background-size: 7.6vh;
+  background-position: 50% 50%;
+}
 
- button:hover {
-   transform: scale(1.2);
- }
+button {
+  justify-self: center;
+  width: 25vmin;
+  height: 7vmin;
+  margin: 2vmin;
+  background: transparent;
+  color: black;
+  border: none;
+  font-size: 1.5vmin;
+  outline: none;
+  background: url(https://i.imgur.com/wTkt4EY.png) no-repeat;
+  background-size: 25vmin;
+}
 
- main {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
- }
+button:hover {
+  transform: scale(1.2);
+}
 
- #choosers {
-   display: flex;
-   justify-content: space-evenly;
-   margin-top: -.7vmin;
-   position: absolute;
-   width: 62vh;
-   align-items: center;
- }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- #choosers > div {
-   height: 10vmin;
-   width: 9vmin;
-   background-image: url(https://i.imgur.com/xPtMq3O.png);
-   background-size: 9vmin;
- }
+#choosers {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -.7vmin;
+  position: absolute;
+  width: 62vh;
+  align-items: center;
+}
 
- #choosers > div:hover {
-   transform: scale(1.4);
- }
+#choosers>div {
+  height: 10vmin;
+  width: 9vmin;
+  background-image: url(https://i.imgur.com/xPtMq3O.png);
+  background-size: 9vmin;
+}
 
- body {
-   text-align: center;
-   font-size: 14px;
-   background: url(https://i.imgur.com/tcFTYGe.jpg);
- }
+#choosers>div:hover {
+  transform: scale(1.4);
+}
 
- .double-border {
+body {
+  text-align: center;
+  font-size: 14px;
+  background: url(https://i.imgur.com/tcFTYGe.jpg);
+}
+
+.double-border {
   border: 4.5px solid black;
   background: black;
   position: relative;
