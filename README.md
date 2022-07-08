@@ -17,23 +17,19 @@ Versions of Connect 4 date back hundreds of years, entertaining sea-bound sailor
 In my version of Connect 4, players will compete using their chosen pizza toppings as tokens. A winner will be determined when 4 or more of the same pizza topping are lined up consecutively in a row, column, or on a diagonal. In a physical version of Connect 4, the player drops their token from the top of a chosen column, letting gravity take it to the next available slot. In my version, small slices of pizza at the top of the board represent each column, and upon clicking them, the player drops their topping in that chosen column. If a player wants to reset the game after a winner is determined, they can reset the board by clicking the rolling pin button and "rolling out some new dough". When the game results in a win or tie, the players can celebrate their hard work with That's Amore! (and hopefully some pizza on the side).
 
 <div align = center><h2>Screenshot</h2><div>
+
 | Description | Screenshot |
 |------------ | ------------|
 | During Gameplay | <img src="https://i.imgur.com/BR7aFAb.png"> |
-
-| Description | Screenshot |
-|------------ | ------------|
 | Winner Determined | <img src="https://i.imgur.com/9jf9l0M.png"> |
 
 <div align = center><h2>Technologies Used :computer:</h2></div>
-
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-333?style=flat&logo=javascript)
 ![HTML5](https://img.shields.io/badge/-HTML5-333?style=flat&logo=html5)
 ![CSS3](https://img.shields.io/badge/-CSS-333?style=flat&logo=css3)
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
-
 
 <div align = center><h2>Getting Started :atom_symbol:</h2></div>
 
