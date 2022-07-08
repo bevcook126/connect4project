@@ -57,6 +57,7 @@ function render() {
     });
     renderChoosers();
     renderMessage();
+    renderButton();
 }
 
 function handleChoice(evt) {
@@ -75,6 +76,11 @@ function renderChoosers() {
         chooserEl.style.visibility = board[columnIdx].includes(null) ? "visible" : "hidden";
         if (winner === -1 || winner === 1) {chooserEl.style.visibility = "hidden"};
     });
+}
+
+function renderButton() {
+    if (winner === null) {replayBtn.style.visibility = "hidden"
+} else {replayBtn.style.visibility = "visible"}
 }
 
 function renderMessage() {
