@@ -18,7 +18,8 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 <div align = center><h2>Screenshot</h2><div>
 
-<img src="https://i.imgur.com/k4HqLKF.png">
+| During Gameplay | <img src="https://i.imgur.com/BR7aFAb.png"> |
+| Winner Determined | <img src="https://i.imgur.com/9jf9l0M.png"> |
 
 <div align = center><h2>Technologies Used :computer:</h2></div>
 
