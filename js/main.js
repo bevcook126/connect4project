@@ -82,24 +82,29 @@ function renderMessage() {
         messageEl.innerHTML = "OLIVE's Turn"; // display player turn
         messageEl.style.color = "olive";
         messageEl.style.backgroundColor = "white";
+        replayBtn.style.visibility = "hidden"
     } else if (winner === null && turn === 1) {
         messageEl.innerHTML = "PEPPERONI's Turn"; // display player turn
         messageEl.style.color = "red";
         messageEl.style.backgroundColor = "white";
+        replayBtn.style.visibility = "hidden"
     } else if (winner === 1) {
         messageEl.innerHTML = 'OLIVE Wins!';
         messageEl.style.color = "white";
         messageEl.style.backgroundColor = "olive";
+        replayBtn.style.visibility = "visible"
         audio.play();
     }  else if (winner === -1) {
         messageEl.innerHTML = 'PEPPERONI Wins!';
         messageEl.style.color = "white";
         messageEl.style.backgroundColor = "red";
+        replayBtn.style.visibility = "visible"
         audio.play();
     } else if (winner === 'T') { // tie game
         messageEl.innerHTML = 'a big pizza TIE!';
         messageEl.style.color = "black";
         messageEl.style.backgroundColor = "gold";
+        replayBtn.style.visibility = "visible"
         audio.play();
     }
 }
