@@ -20,8 +20,9 @@ In my version of Connect 4, players will compete using their chosen pizza toppin
 
 | Description | Screenshot |
 |------------ | ------------|
-| During Gameplay | <img src="https://i.imgur.com/BR7aFAb.png"> |
-| Winner Determined | <img src="https://i.imgur.com/9jf9l0M.png"> |
+| **New Game**<br>Pepperoni starts the game and clicks on the pizza slice buttons to choose a column for their first topping. | <img src="https://i.imgur.com/7u9MnQs.png"> | 
+| **During Gameplay**<br>Pizza slices disappear when a column is full. | <img src="https://i.imgur.com/9QPGRuX.png"> |
+| **Winner Determined**<br>All pizza slices disappear and the replay rolling pin appears. The winning player is serenaded by Dean Martin and Frank Sinatra. That's Amore! | <img src="https://i.imgur.com/9jf9l0M.png"> |
 
 <div align = center><h2>Technologies Used :computer:</h2></div>
 
