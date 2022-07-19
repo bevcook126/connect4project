@@ -2,7 +2,7 @@
 <h1>:pizza: Connect 4 :pizza:</h1>
 <h3>https://github.com/bevcook126/connect4project</h3>
 <h5>Beverly Cook</h5>
-<a href="https://www.linkedin.com/in/beverly-cook-093625153/" target="_blank">
+<a href="https://www.linkedin.com/in/beverly-cook/" target="_blank">
       <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white">
    </a> 
 <a href="mailto:bevcook126@gmail.com" target="_blank">
